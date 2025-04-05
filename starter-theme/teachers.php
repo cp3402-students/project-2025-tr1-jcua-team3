@@ -56,7 +56,7 @@ $teachers = [
         // Loop through the $teachers array and display each teacher
         foreach ($teachers as $teacher) {
             echo '<div class="teacher-container">';
-            echo '<img src="' . get_template_directory_uri() . '/images/' . $teacher['image'] . '" alt="' . $teacher['name'] . '">';
+            echo '<img src="' . $teacher['image'] . '" alt="' . $teacher['name'] . '">';
             echo '<div class="text">';
             echo '<h3>' . $teacher['name'] . '</h3>';
             echo '<p><strong>Qualification:</strong> ' . $teacher['qualification'] . '</p>';
