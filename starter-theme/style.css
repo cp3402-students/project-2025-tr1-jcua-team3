@@ -992,10 +992,11 @@ textarea {
     max-width: 400px;    
     font-family: Arial, sans-serif;  
     line-height: 1.5;   
+	color: royalblue;
 }
 
 /* Optional: Styling for teacher's name */
 .teacher-container h3 {
-    margin: 0;           /* Removes default margin */
-    font-size: 1.2rem;   /* Sets the font size for the name */
+    margin: 0;           
+    font-size: 1.2rem;   
 }
