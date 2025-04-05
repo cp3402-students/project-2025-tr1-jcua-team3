@@ -1,6 +1,6 @@
 <?php include("./layout/header.php"); ?>
-/* Template Name: Teachers */
 <?php
+/* Template Name: Teachers */
 // Array of teachers with their details
 $teachers = [
     [
