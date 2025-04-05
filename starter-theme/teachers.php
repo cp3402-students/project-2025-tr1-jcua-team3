@@ -15,7 +15,7 @@ $teachers = [
         'qualification' => 'Masters in Education, Post Diploma in Education',
         'experience' => '6 Years teaching experience',
         'description' => 'Ms Jennifer outgoing personality wins her students over easily. With 6 years of experience in science and math education, she can easily convey difficult science and math concepts to the young minds with interactive approaches. Coupled with the centre’s Hands on, Minds on pedagogy, her students are often enthusiastic in classroom learning.',
-        'image' => get_template_directory_uri() . '/images/Teacher2.png'
+        'image' => get_template_directory_uri() . '/images/Teacher2.png' 
     ],
     [
         'name' => 'Mr Gao Tian',
