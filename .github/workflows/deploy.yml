@@ -3,7 +3,7 @@ name: Deploying WordPress Site
 on:
   push:
     branches:
-      - staging # Adjust this based on the branch you want to trigger deployment
+      - staging-header-branch # Adjust this based on the branch you want to trigger deployment
 
 jobs:
   deploy:
@@ -27,6 +27,7 @@ jobs:
           private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           destination-path: /home/bitnami/stack/wordpress/wp-content/themes/starter-theme-sass
           ssh-port: 22
+          source-path: ./starter-theme-sass
           rsync-options: --archive --verbose --compress --human-readable --progress --delete-after --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
 
       # - name: Sync Files
