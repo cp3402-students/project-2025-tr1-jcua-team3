@@ -176,3 +176,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function remove_sidebar_widget() {
+    unregister_sidebar( 'sidebar-1' );
+}
+add_action( 'widgets_init', 'remove_sidebar_widget', 11 );
