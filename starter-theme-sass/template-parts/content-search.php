@@ -32,4 +32,4 @@
 	<footer class="entry-footer">
 		<?php starter_theme_sass_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>#post-<?php the_ID(); ?>
