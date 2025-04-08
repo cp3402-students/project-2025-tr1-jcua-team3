@@ -106,53 +106,54 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'variables'; // Import the variables for easier customization
 
 body {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $padding-horizontal;
-  background: #f5f5f5;
-
-  // If you have more body-specific styles, add them here
-}
-
-h1, h2, h3, h4, h5, h6 {
-  text-align: center;
-}
-
-p {
-  text-align: justify;
-}
-
-ul, ol {
-  padding-left: 20px;
-}
-
-a {
-  color: $primary-color;
-  text-decoration: none;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $secondary-color;
-    text-decoration: underline;
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 0 $padding-horizontal;
+	background: #f5f5f5;
+  
+	// If you have more body-specific styles, add them here
   }
-
-  &:visited {
-    color: $visited-color;
+  
+  h1, h2, h3, h4, h5, h6 {
+	text-align: center;
   }
-}
-
-.site-footer {
-  text-align: center;
-  padding: 10px 0;
-  background-color: $footer-bg-color;
-  color: $footer-text-color;
-
+  
+  p {
+	text-align: justify;
+  }
+  
+  ul, ol {
+	padding-left: 20px;
+  }
+  
   a {
-    color: $footer-text-color;
-
-    &:hover {
-      color: $footer-link-hover-color;
-    }
+	color: $primary-color;
+	text-decoration: none;
+  
+	&:hover,
+	&:focus,
+	&:active {
+	  color: $secondary-color;
+	  text-decoration: underline;
+	}
+  
+	&:visited {
+	  color: $visited-color;
+	}
   }
-}
+  
+  .site-footer {
+	text-align: center;
+	padding: 10px 0;
+	background-color: $footer-bg-color;
+	color: $footer-text-color;
+  
+	a {
+	  color: $footer-text-color;
+  
+	  &:hover {
+		color: $footer-link-hover-color;
+	  }
+	}
+  }
+  

@@ -137,19 +137,38 @@ add_action( 'widgets_init', 'starter_theme_sass_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+// function starter_theme_sass_scripts() {
+// 	wp_enqueue_style( 'starter-theme-sass-style', get_stylesheet_uri(), array(), _S_VERSION );
+
+// 	wp_style_add_data( 'starter-theme-sass-style', 'rtl', 'replace' );
+//     wp_enqueue_style('starter-theme-sass-compiled', get_template_directory_uri() . '/starter-theme-sass/css/style.css', array(), _S_VERSION );
+
+
+// 	wp_enqueue_script( 'starter-theme-sass-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+// 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+// 		wp_enqueue_script( 'comment-reply' );
+// 	}
+// }
+// add_action( 'wp_enqueue_scripts', 'starter_theme_sass_scripts' );
+
 function starter_theme_sass_scripts() {
-	wp_enqueue_style( 'starter-theme-sass-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'starter-theme-sass-style', 'rtl', 'replace' );
+    // Enqueue the compiled CSS from the 'starter-theme-sass/css/' folder
     wp_enqueue_style('starter-theme-sass-compiled', get_template_directory_uri() . '/starter-theme-sass/css/style.css', array(), _S_VERSION );
+    
+    // Add RTL support for the compiled CSS if the current language is RTL
+    wp_style_add_data( 'starter-theme-sass-compiled', 'rtl', 'replace' );
 
+    // Enqueue other scripts as needed
+    wp_enqueue_script( 'starter-theme-sass-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'starter-theme-sass-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+    // Enable comment-reply script on single posts if comments are open
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'starter_theme_sass_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
