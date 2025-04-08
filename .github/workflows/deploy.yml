@@ -3,6 +3,7 @@ name: Deploying WordPress Site
 on:
   push:
     branches:
+      - staging
       - staging-header-branch # Adjust this based on the branch you want to trigger deployment
 
 jobs:

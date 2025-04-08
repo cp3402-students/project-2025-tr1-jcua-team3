@@ -52,5 +52,5 @@
 			);
 			?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?> -->
+	<?php endif; ?>  -->
 </article><!-- #post-<?php the_ID(); ?> -->
