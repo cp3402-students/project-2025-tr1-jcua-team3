@@ -40,7 +40,8 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			top: 100%;
+			left: 0;
 		}
 	}
 

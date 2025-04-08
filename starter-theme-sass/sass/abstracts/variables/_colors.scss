@@ -13,18 +13,36 @@ $color__link-visited: #800080; //purple
 $color__link-hover: #191970; //midnightblue
 $color__text-main: #404040;
 
+
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-$primary-color: #4A90E2;
-$secondary-color: #357ABD;
-$visited-color: #800080;
-$footer-bg-color: #333;
-$footer-text-color: #fff;
-$footer-link-hover-color: #ddd;
-$max-width: 1200px;
-$padding-horizontal: 10px;
 
+//// Caching test
+//
+//// Background Colors (opposites)
+//$color__background-body: #000; // Black
+//$color__background-screen: #0e0e0e; // Dark gray
+//$color__background-hr: #333; // Darker gray
+//$color__background-button: #191919; // Very dark gray
+//$color__background-pre: #111; // Almost black
+//$color__background-ins: #0006ff; // Bright blue (opposite of yellow)
+//
+//// Text Colors (opposites)
+//$color__text-screen: #de8a64; // Soft orange (opposite of blue)
+//$color__text-input: #999; // Light gray
+//$color__text-input-focus: #eee; // Very light gray
+//$color__link: #be9600; // Golden yellow (opposite of royal blue)
+//$color__link-visited: #7fff7f; // Bright green (opposite of purple)
+//$color__link-hover: #e6e6ff; // Light lavender (opposite of midnight blue)
+//$color__text-main: #bfbfbf; // Light gray
+//
+//// Border Colors (opposites)
+//$color__border-button: #333 #333 #444; // Darker tones
+//$color__border-button-hover: #333 #444 #555; // Slightly lighter hover effect
+//$color__border-button-focus: #555 #444 #444; // Softer focus tones
+//$color__border-input: #333; // Dark gray
+//$color__border-abbr: #999; // Light gray

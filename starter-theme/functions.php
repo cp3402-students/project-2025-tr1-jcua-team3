@@ -138,8 +138,7 @@ add_action( 'widgets_init', 'starter_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function starter_theme_scripts() {
-	// wp_enqueue_style( 'starter-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'starter-theme-style', "http://3.24.178.18/wp-content/themes/starter-theme/starter-theme/style.css", array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'starter-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'starter-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'starter-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -149,23 +148,6 @@ function starter_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'starter_theme_scripts' );
-// function starter_theme_scripts() {
-//     // Enqueue the main stylesheet (style.css)
-//     wp_enqueue_style( 'starter-theme-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
-
-//     // Enqueue any additional stylesheets if needed
-//     wp_enqueue_style( 'my-theme-style', get_template_directory_uri() . '/style.css' );
-
-//     // Enqueue JavaScript (if needed)
-//     wp_enqueue_script( 'starter-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
-
-//     // Enqueue comment reply script (if needed)
-//     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-//         wp_enqueue_script( 'comment-reply' );
-//     }
-// }
-// add_action( 'wp_enqueue_scripts', 'starter_theme_scripts' );
-
 
 /**
  * Implement the Custom Header feature.
