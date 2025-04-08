@@ -29,6 +29,8 @@
 		?>
 	</div><!-- .entry-content -->
 
+	
+</article><!-- #post-<?php the_ID(); ?> -->
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
