@@ -31,7 +31,7 @@
 
 	
 </article><!-- #post-<?php the_ID(); ?> -->
-	<?php if ( get_edit_post_link() ) : ?>
+	<!-- <?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
 			edit_post_link(
@@ -52,5 +52,5 @@
 			);
 			?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+	<?php endif; ?> -->
 </article><!-- #post-<?php the_ID(); ?> -->
