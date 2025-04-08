@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="PHPSpec">
@@ -7,4 +8,15 @@
       </PhpSpecSuiteConfiguration>
     </suites>
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PHPSpec">
+    <suites>
+      <PhpSpecSuiteConfiguration>
+        <option name="myPath" value="$PROJECT_DIR$" />
+      </PhpSpecSuiteConfiguration>
+    </suites>
+  </component>
+>>>>>>> F01-Modify_template
 </project>

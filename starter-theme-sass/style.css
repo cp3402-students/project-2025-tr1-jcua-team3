@@ -617,32 +617,6 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-/* Header
---------------------------------------------- */
-.site-header {
-  background-color: #fff;
-}
-.site-header a {
-  color: #404040;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-}
-
-.site-nav {
-  margin: 0 50px;
-  display: flex;
-  background-color: #f1f1f1;
-  align-items: center;
-  height: 80px;
-}
-
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
