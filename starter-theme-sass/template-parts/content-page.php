@@ -31,12 +31,12 @@
 
 	
 </article><!-- #post-<?php the_ID(); ?> -->
-	<!-- <?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+<?php if ( get_edit_post_link() ) : ?>
+		<!-- <footer class="entry-footer">
 			<?php
 			edit_post_link(
 				sprintf(
-					wp_kses( 
+					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Edit <span class="screen-reader-text">%s</span>', 'starter-theme-sass' ),
 						array(
@@ -50,7 +50,7 @@
 				'<span class="edit-link">',
 				'</span>'
 			);
-			?>
+			?> -->
 		</footer><!-- .entry-footer -->
-	<?php endif; ?> -->
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
