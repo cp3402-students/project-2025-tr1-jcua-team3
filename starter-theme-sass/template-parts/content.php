@@ -31,7 +31,7 @@
 
 	<?php starter_theme_sass_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<!-- <div class="entry-content">
 		<?php
 		the_content(
 			sprintf(
@@ -59,6 +59,6 @@
 
 	<!-- <footer class="entry-footer">-->
 <!-- <?php starter_theme_sass_entry_footer(); ?> -->
-</footer><!-- .entry-footer -->
+</footer> --><!-- .entry-footer -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
