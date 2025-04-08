@@ -14,14 +14,10 @@
 			position: absolute;
 			top: 100%;
 			left: -999em;
-<<<<<<< HEAD
 			z-index: 10;
 			background-color: #ffffff;
 			color: #000000;
 			border: 1px solid #cccccc;
-=======
-			z-index: 99999;
->>>>>>> F01-Modify_template
 
 			ul {
 				left: -999em;
@@ -40,24 +36,11 @@
 			a {
 				width: 200px;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
 		}
 
 		li:hover > ul,
 		li.focus > ul {
-<<<<<<< HEAD
-			top: 100%;
-			left: 0;
-=======
 			left: auto;
->>>>>>> F01-Modify_template
 		}
 	}
 
@@ -66,23 +49,17 @@
 
 		&:hover > a,
 		&.focus > a {
-<<<<<<< HEAD
 			text-decoration: underline;
-=======
->>>>>>> F01-Modify_template
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
-<<<<<<< HEAD
 		margin: 0.5em;
 		padding: 0.5em;
 		//border-right: 1px solid red;
 		//border-left: 1px solid red;
-=======
->>>>>>> F01-Modify_template
 	}
 
 	.current_page_item > a,
