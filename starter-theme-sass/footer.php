@@ -17,6 +17,7 @@
             <div class="footer-logo">
                 <?php if (has_custom_logo()) { the_custom_logo(); } ?>
             </div>
+            
             <div class="footer-info">
                 <h4><?php echo esc_html(get_theme_mod('footer_company_name', 'Default Company Name')); ?></h4>
                 <p><?php echo esc_html(get_theme_mod('footer_address_line1', 'Default Address Line 1')); ?><br>
