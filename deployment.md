@@ -2,8 +2,7 @@
 
 This is where we will describe our development and deployment workflow in enough detail that a new team member or someone taking over the project could follow to successfully develop theme updates locally, then test and deploy them to your staging and live sites. This should include aspects such as project management, version control, testing and automation. **Do not provide private details like passwords.**
 
-## Setting up your local environment  #TODO
-### Development Environment Setup
+## Development Environment Setup
 To develop the theme locally, Docker is used to create an isolated environment that ensures consistency across all stages of development. If you're unfamiliar with Docker, ensure you have Docker Desktop installed and running.
 
 - Clone the theme repository to your local environment.
@@ -84,7 +83,6 @@ Select the XML file from your computer and click on "Upload file and import".
 
 Under "Import Attachments", check "Download and import file attachments" and click Submit.
 
-## Create Staging and Live sites using Hosting  #TODO
 ## Set up GitHub Actions to Automate deployment
 ### 1. Create the GitHub Actions Workflow Directory
 
