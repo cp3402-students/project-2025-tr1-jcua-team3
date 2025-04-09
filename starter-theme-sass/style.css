@@ -861,6 +861,88 @@ textarea {
   display: block;
 }
 
+/* Footer
+--------------------------------------------- */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Aligns columns vertically */
+  gap: 20px;
+  /* Top Section: Two Columns */
+  /* Bottom Section: Socials & Copyright */
+}
+.site-footer .footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Left column (logo + info) wider than right column (nav) */
+  gap: 20px;
+}
+.site-footer .footer-container .footer-left {
+  text-align: left;
+}
+.site-footer .footer-container .footer-left .footer-logo {
+  margin-bottom: 20px;
+}
+.site-footer .footer-container .footer-left .footer-logo img {
+  max-width: 150px;
+}
+.site-footer .footer-container .footer-left .footer-info h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.site-footer .footer-container .footer-left .footer-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+.site-footer .footer-container .footer-right .footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .footer-container .footer-right .footer-links ul li {
+  margin-bottom: 8px;
+}
+.site-footer .footer-container .footer-right .footer-links ul li a {
+  color: #fff;
+  font-size: 0.9rem;
+}
+.site-footer .footer-container .footer-right .footer-links ul li a:hover {
+  color: #ddd;
+}
+.site-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.site-footer .footer-bottom .footer-social a {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+.site-footer .footer-bottom .footer-copyright {
+  font-size: 0.8rem;
+}
+
+.footer-nav {
+  text-align: left;
+}
+.footer-nav .footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-nav .footer-menu li {
+  margin-bottom: 8px;
+}
+.footer-nav .footer-menu li a {
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.footer-nav .footer-menu li a:hover {
+  color: #ddd;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -958,5 +1040,3 @@ textarea {
 .site-footer a:hover {
   color: #ddd;
 }
-
-/*# sourceMappingURL=style.css.map */

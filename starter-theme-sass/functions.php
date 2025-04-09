@@ -176,3 +176,78 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* Footer Customiser */
+function footer_customize_register($wp_customize) {
+    // Add a Section for Footer
+    $wp_customize->add_section('footer_section', array(
+        'title'      => __('Footer Settings', 'your-theme-textdomain'),
+        'priority'   => 120,
+    ));
+
+    // Add Setting & Control for Company Name
+    $wp_customize->add_setting('footer_company_name', array(
+        'default'           => 'Default Company Name',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('footer_company_name_control', array(
+        'label'    => __('Company Name', 'your-theme-textdomain'),
+        'section'  => 'footer_section',
+        'settings' => 'footer_company_name',
+        'type'     => 'text',
+    ));
+
+    // Add Setting & Control for Address Line 1
+    $wp_customize->add_setting('footer_address_line1', array(
+        'default'           => 'Default Address Line 1',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('footer_address_line1_control', array(
+        'label'    => __('Address Line 1', 'your-theme-textdomain'),
+        'section'  => 'footer_section',
+        'settings' => 'footer_address_line1',
+        'type'     => 'text',
+    ));
+
+    // Add Setting & Control for Address Line 2
+    $wp_customize->add_setting('footer_address_line2', array(
+        'default'           => 'Default Address Line 2',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('footer_address_line2_control', array(
+        'label'    => __('Address Line 2', 'your-theme-textdomain'),
+        'section'  => 'footer_section',
+        'settings' => 'footer_address_line2',
+        'type'     => 'text',
+    ));
+
+    // Add Setting & Control for Phone
+    $wp_customize->add_setting('footer_phone', array(
+        'default'           => '(123) 456-7890',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('footer_phone_control', array(
+        'label'    => __('Phone', 'your-theme-textdomain'),
+        'section'  => 'footer_section',
+        'settings' => 'footer_phone',
+        'type'     => 'text',
+    ));
+
+    // Add Setting & Control for Email
+    $wp_customize->add_setting('footer_email', array(
+        'default'           => 'info@company.com',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+    $wp_customize->add_control('footer_email_control', array(
+        'label'    => __('Email', 'your-theme-textdomain'),
+        'section'  => 'footer_section',
+        'settings' => 'footer_email',
+        'type'     => 'email',
+    ));
+}
+add_action('customize_register', 'footer_customize_register');
+
+
+function register_footer_menu() {
+    register_nav_menu('footer-menu', __('Footer Menu', 'your-theme-textdomain'));
+}
+add_action('init', 'register_footer_menu');
