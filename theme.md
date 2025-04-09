@@ -29,15 +29,13 @@ Additional modifications may be required depending on further customizations for
 
 ## Design Decisions
 - **Color Scheme**: The theme uses a light background with dark text to prioritize readability.
-  - Primary Color: #ffffff (white)
+  - Primary Color: #0073aa (blue)
   - Secondary Color: #555555 (dark gray)
 - **Typography**: System fonts are used for better performance and accessibility.
 
 ## Customizability Options
 - **Color Options**: Modify the header and background colors directly from the WordPress Customizer.
 - **Layout Choices**: Choose between a full-width or boxed layout through the WordPress Customizer.
-- **Footer Content**: Modify the footer text through the WordPress Customizer.
-- **Footer Navigation**: An option to add navigation links in the footer section, using the Footer Menu in the WordPress Customizer.
 
 ## Installation and Setup
 - To install the theme, go to **Appearance > Themes** in your WordPress dashboard.
