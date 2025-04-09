@@ -33,13 +33,8 @@
 
     <!-- Bottom Row: Social Media & Copyright -->
     <div class="footer-bottom">
-        <div class="footer-social">
-            <a href="#facebook">FB</a> |
-            <a href="#instagram">IG</a> |
-            <a href="#twitter">X</a>
-        </div>
         <div class="footer-copyright">
-            <p>&copy; <?php echo date('Y'); ?> Company Name. All rights reserved.</p>
+            <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('footer_company_name', 'Default Company Name')); ?>. All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -871,7 +871,7 @@ textarea {
   flex-direction: column; /* Aligns columns vertically */
   gap: 20px;
   /* Top Section: Two Columns */
-  /* Bottom Section: Socials & Copyright */
+  /* Bottom Section: Copyright */
 }
 .site-footer .footer-container {
   display: grid;
@@ -914,10 +914,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-.site-footer .footer-bottom .footer-social a {
-  font-size: 1.2rem;
-  margin-right: 10px;
 }
 .site-footer .footer-bottom .footer-copyright {
   font-size: 0.8rem;
