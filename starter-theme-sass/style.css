@@ -673,7 +673,7 @@ textarea {
 
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
+/* .main-navigation {
   display: block;
   width: 100%;
 }
@@ -721,7 +721,40 @@ textarea {
   text-decoration: none;
   margin: 0.5em;
   padding: 0.5em;
+} */
+
+.container {
+  max-width: 100%;
+  overflow-x: auto;
 }
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-navigation {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start;
+  gap: 10px; 
+}
+
+.main-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-navigation ul li {
+  margin-right: 15px; 
+}
+
+.main-navigation ul li a {
+  white-space: nowrap; 
+}
+
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
