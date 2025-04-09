@@ -100,3 +100,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+
+.site-footer {
+	text-align: center;
+	padding: 10px 0;
+	background-color: #333;
+	color: #fff;
+  
+	a {
+	  color: #fff;
+  
+	  &:hover {
+		color: #ddd;
+	  }
+	}
+  }
+  
