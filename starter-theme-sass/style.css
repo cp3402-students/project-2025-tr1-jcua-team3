@@ -619,30 +619,6 @@ textarea {
 --------------------------------------------------------------*/
 /* Header
 --------------------------------------------- */
-/* .site-header {
-  background-color: #fff;
-}
-.site-header a {
-  color: #404040;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-}
-
-.site-nav {
-  margin: 0 50px;
-  display: flex;
-  background-color: #f1f1f1;
-  align-items: center;
-  height: 80px;
-} */
-
 
 .site-logo {
   width: 279px;
@@ -657,11 +633,16 @@ textarea {
   object-fit: contain;
 }
 
-.container {
+.logo-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; 
   align-items: center;
   width: 100%;
+  max-width: 100%;
+}
+
+.logo-container .site-logo {
+  flex-shrink: 0; 
 }
 
 .site-nav {
@@ -723,39 +704,47 @@ textarea {
   padding: 0.5em;
 } */
 
-.container {
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-.site-nav {
+.nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; 
   align-items: center;
+  flex-grow: 1; 
 }
 
+/* Navigation menu adjustments */
 .main-navigation {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 10px; 
+  gap: 10px;
+  width: 100%;
 }
 
 .main-navigation ul {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .main-navigation ul li {
-  margin-right: 15px; 
+  margin-right: 15px;
 }
 
 .main-navigation ul li a {
-  white-space: nowrap; 
+  text-decoration: none;
+  padding: 0.5em;
+  white-space: nowrap;
+  display: inline-block;
 }
 
+.main-navigation ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 
-/* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;

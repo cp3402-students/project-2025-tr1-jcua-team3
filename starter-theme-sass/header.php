@@ -33,24 +33,26 @@
             ?>
             <p class="site-description"><?php echo $starter_theme_sass_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
         <?php endif; ?>
-        <div class="container">
-        <div class="site-logo">
-            <?php
-        the_custom_logo();?>
-        </div>
+		 
+		<div class="logo-container">
+			<div class="site-logo">
+				<?php the_custom_logo(); ?>
+			</div>
+		</div>
 
-        <div class="site-nav">
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'starter-theme-sass' ); ?></button>
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                    )
-                );
-                ?>
-            </nav><!-- #site-navigation -->
-        </div>
+	    <div class="nav-container">
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'starter-theme-sass' ); ?></button>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+		</div>
+
         </div>
 	</header><!-- #masthead -->
