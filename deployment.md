@@ -3,7 +3,57 @@
 This is where we will describe our development and deployment workflow in enough detail that a new team member or someone taking over the project could follow to successfully develop theme updates locally, then test and deploy them to your staging and live sites. This should include aspects such as project management, version control, testing and automation. **Do not provide private details like passwords.**
 
 ## Setting up your local environment  #TODO
+### Development Environment Setup
+To develop the theme locally, Docker is used to create an isolated environment that ensures consistency across all stages of development. If you're unfamiliar with Docker, ensure you have Docker Desktop installed and running.
 
+- Clone the theme repository to your local environment.
+
+`git clone <repository-url>`
+`cd <theme-directory>`
+
+- Docker Setup:
+
+If Docker is being used, ensure the necessary Docker setup files (e.g., docker-compose.yml) are present in the repository.
+
+Build and start the Docker containers:
+
+`docker-compose up --build`
+
+### Version Control with GitHub
+For version control, we use GitHub along with Git’s basic commands. Developers are expected to follow best practices for committing, pulling, and pushing changes.
+
+* Basic Git Commands:
+
+- To push changes:
+`git add .`
+`git commit -m "Commit message"`
+`git push origin main`
+
+- To pull changes:
+`git pull origin main`
+
+You can also use a code editor like Visual Studio Code, which has integrated Git support, making it easier to commit and push changes directly from the editor.
+
+### Testing the Theme
+Testing the theme ensures it works well under a variety of conditions. We use the Theme Unit Test to test the theme.
+
+* Download Test Data:
+
+- Clone the theme test data file themeunittestdata.wordpress.xml from the GitHub repository:
+
+`wget https://raw''.githubusercontent.com/WPTT/theme-unit-test/master/themeunittestdata.wordpress.xml`
+
+Or Download a copy from https://raw.githubusercontent.com/WPTT/theme-unit-test/master/themeunittestdata.wordpress.xml
+
+Import Test Data into WordPress:
+
+> Go to Tools => Import => WordPress.
+
+Select the XML file from your computer and click on "Upload file and import".
+
+Under "Import Attachments", check "Download and import file attachments" and click Submit.
+
+## Download starter theme
 Once you've set up your own local environment (WAMP, MAMP, XAMP, Docker), download the starter theme from:
 
 > `/project_resources/themes/starter-theme.zip`
