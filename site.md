@@ -11,10 +11,7 @@ Staging: [http://3.24.178.18/wp-admin](http://3.24.178.18/wp-admin)
 
 Live: [http://13.210.12.189/wp-admin](http://13.210.12.189/wp-admin)
 
-Once you have clicked the url, you will be prompted to input the username and password to gain wp-admin access. Login details for both are: 
-
-- Username = user
-- Password =
+Once you have clicked the url, you will be prompted to input the username and password to gain wp-admin access. 
 
 ## Adding Content
 ### Adding Pages

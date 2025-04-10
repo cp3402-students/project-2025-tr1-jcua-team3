@@ -197,3 +197,8 @@ i)  We used Trello for project management:
 ii) Slack was used for team communication:
 - Daily updates and task coordination.
 - GitHub notifications were integrated with Slack so any commit or pull request would notify the team in real-time.
+
+iii)We also used Discord for voice meetings:
+- We also used Discord to help each other troubleshoot issues, especially when someone got stuck or a git conflict came up.
+
+iv) Weekly stand-up meetings were held to check in, set priorities, and discuss progress.
