@@ -1,6 +1,6 @@
-# Deployment
+# Deployment Workflow
 
-This is where we will describe our development and deployment workflow in enough detail that a new team member or someone taking over the project could follow to successfully develop theme updates locally, then test and deploy them to your staging and live sites. This should include aspects such as project management, version control, testing and automation. **Do not provide private details like passwords.**
+This guide describes the development and deployment workflow for the project, covering environment setup, version control, testing, and automated deployment. It ensures that new team members or someone taking over can seamlessly develop, test, and deploy theme updates locally, then push them to staging and live sites.
 
 ## Development Environment Setup
 To develop the theme locally, Docker is used to create an isolated environment that ensures consistency across all stages of development. If you're unfamiliar with Docker, ensure you have Docker Desktop installed and running.
@@ -14,11 +14,13 @@ To develop the theme locally, Docker is used to create an isolated environment t
 
 If Docker is being used, ensure the necessary Docker setup files (e.g., docker-compose.yml) are present in the repository.
 
+Use this [documentation](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/wordpress/) to set up docker in your device.
+
 Build and start the Docker containers:
 
 `docker-compose up --build`
 
-### Version Control with GitHub
+## Version Control with GitHub
 For version control, we use GitHub along with Git’s basic commands. Developers are expected to follow best practices for committing, pulling, and pushing changes.
 
 * Basic Git Commands:
@@ -34,17 +36,10 @@ For version control, we use GitHub along with Git’s basic commands. Developers
 You can also use a code editor like Visual Studio Code, which has integrated Git support, making it easier to commit and push changes directly from the editor.
 
 ## Download starter theme
-## Base Theme Version
-
-Once you've set up your own local environment (WAMP, MAMP, XAMP, Docker), download the starter theme from:
-
-- `/project_resources/themes/starter-theme.zip`
-
-Use the theme editor in wordpress to install the starter theme
-
-## Sassified Theme Version with Gulp
+### Sassified Theme Version with Gulp
 
 ### 1. Download the sass version:
+Once you've set up your own local environment (WAMP, MAMP, XAMP, Docker), download the starter theme from:
 - `/project_resources/themes/starter-theme-sass.zip`
 
 ### 2. Install and Set Up the Theme
@@ -54,17 +49,17 @@ Use the theme editor in wordpress to install the starter theme
 ### 3. Install Node.js and Dependencies
 - Ensure [Node.js](https://nodejs.org/) is installed.
 - Open your terminal and navigate to the theme directory:
->bash cd `/path/to/starter-theme-sass`
+> cd `/path/to/starter-theme-sass`
 - Install the required dependencies:
->bash npm install
+> npm install
 
 ### 4. Set Up Gulp for Sass Compilation
 - Install Gulp globally:
->bash npm install -g gulp-cli
+> npm install -g gulp-cli
 - Start Gulp to watch and compile Sass:
->bash gulp
+> gulp 
 
-### Testing the Theme
+## Testing the Theme
 Testing the theme ensures it works well under a variety of conditions. We use the Theme Unit Test to test the theme.
 
 * Download Test Data:
@@ -77,9 +72,10 @@ Or Download a copy from https://raw.githubusercontent.com/WPTT/theme-unit-test/m
 
 Import Test Data into WordPress:
 
-> Go to Tools => Import => WordPress.
+> Go to Tools => Import
+If WordPress is not installed, install it and press <em>Run Importer</em>
 
-Select the XML file from your computer and click on "Upload file and import".
+Then, click choose file and select the XML file from your computer and then click on "Upload file and import".
 
 Under "Import Attachments", check "Download and import file attachments" and click Submit.
 
@@ -102,9 +98,8 @@ Steps:
 ### 2. Create a New Workflow YAML File
 
 Now, you’ll create a file in this new directory to define your deployment process.
-Steps:
 
-In the `.github/workflows/` directory, create a new YAML file. You can name this file `deploy.yml` because it’s related to deployment.
+- In the `.github/workflows/` directory, create a new YAML file. You can name this file `deploy.yml` because it’s related to deployment.
 
 - Run the following command in your terminal:
 
@@ -114,47 +109,48 @@ Alternatively, you can create this file directly in your code editor.
 
 ### 3. Write the Workflow for WordPress Deployment
 
-This is where the magic happens! You will define the workflow’s steps to automate the deployment of your WordPress site. GitHub Actions uses YAML syntax for defining these workflows.
+Next,you will define the workflow’s steps to automate the deployment of your WordPress site. GitHub Actions uses YAML syntax for defining these workflows.
 
-show our deploy file
+See our deploy.yml [here](https://github.com/cp3402-students/project-2025-tr1-jcua-team3/blob/main/.github/workflows/deploy.yml).
 
 ## 4. Configure GitHub Secrets for Secure Access
 ### 4.1. Generate the SSH Key Pair
-First, you must generate an SSH key pair (private and public keys).
-Open your terminal (on macOS, Linux, or Windows with Git Bash or WSL).
-Run the following command to generate the SSH key pair:
+- First, you must generate an SSH key pair (private and public keys).
+- Open your terminal (on macOS, Linux, or Windows with Git Bash or WSL).
+- Run the following command to generate the SSH key pair:
 `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-Press Enter when prompted to specify a file to save the key (you can just use the default path).
+- Press Enter when prompted to specify a file to save the key (you can just use the default path).
 You’ll be asked for a passphrase (optional but recommended for added security).
-This will generate two files:
-Private Key (usually saved as ~/.ssh/id_rsa).
-Public Key (saved as ~/.ssh/id_rsa.pub).
+- This will generate two files:
+i) Private Key (usually saved as ~/.ssh/id_rsa).
+ii) Public Key (saved as ~/.ssh/id_rsa.pub).
 
 ### 4.2. Copy the Private Key
 Next, you need to store the private key for use in GitHub Actions securely.
 Open the private key file (id_rsa) in a text editor.
-Copy everything in the file, including the 
->-----BEGIN OPENSSH PRIVATE KEY----- and -----END OPENSSH PRIVATE KEY----- lines
-### 4.3. Add the Public Key to Your Server
-For your server to authenticate via SSH, you need to add the public key to your server’s 
->~/.ssh/authorized_keys> file
-- Copy the contents of the id_rsa.pub file (this is the public key).
-- Log into your server via SSH:
-`ssh bitnami@<server-ip>`
-- Open the authorized_keys file on your server:
-`nano ~/.ssh/authorized_keys`
-Paste the public key into the file and save it.
-Now your server will accept SSH connections from the corresponding private key.
-### 4.4 Configure GitHub Secrets for Secure Access
-You need to store sensitive data (like the SSH private key) securely in GitHub Secrets so that it’s not exposed in the workflow file.
+Copy everything in the file, including 
+>-----BEGIN OPENSSH PRIVATE KEY----- and -----END OPENSSH PRIVATE KEY----- 
+
+### 4.3 Configure GitHub Secrets for Secure Access
+Then, you need to store sensitive data (like the SSH private key) securely in GitHub Secrets so that it’s not exposed in the workflow file.
 - * Steps to add SSH key as a GitHub Secret:
 - Go to your GitHub repository.
 - Click on Settings (near the top of the page).
 - On the left sidebar, click on Secrets and Variables> Actions.
 - Click on New Repository secret.
 - Add a secret with the name SSH_PRIVATE_KEY and paste the SSH private key in the value field.
-- Add another secret named REMOTE_SERVER and put the IP or domain of your remote server or include that in your deploy file
 This is important because GitHub Actions will securely access these secrets when running the workflow.
+
+### 4.4 Add the Public Key to Your Server
+For your server to authenticate via SSH, you need to add the public key to your server’s 
+> ~/.ssh/authorized_keys> file
+- Copy the contents of the id_rsa.pub file (this is the public key).
+- Log into your server via SSH:
+> ssh bitnami@<server-ip>
+- Open the authorized_keys file on your server:
+> nano ~/.ssh/authorized_keys
+Paste the public key into the file and save it.
+Now your server will accept SSH connections from the corresponding private key.
 
 ### 5. Push the Changes to GitHub
 
@@ -162,7 +158,7 @@ Now, commit the deploy.yml workflow file and push it to GitHub.
 
 Steps:
 
-1. Run these commands to add, commit, and push the file:
+1. Run these commands to add, commit, and push the file(Make sure you're inside your project’s local Git repository directory.):
 
 `git add .github/workflows/deploy.yml`
 
@@ -177,6 +173,7 @@ Steps:
 - Commit the file with a message describing the change.
 
 - Push the changes to GitHub.
+
 ### 6. Verify the Deployment
 Once you push the changes, GitHub Actions will automatically trigger the workflow if the conditions are met (in this case, a push to the main branch).
 
@@ -189,3 +186,14 @@ Steps:
 3. The logs will show the step-by-step process, including any errors or successes.
 
 4. After the workflow completes successfully, check your WordPress site to verify that it was deployed correctly.
+
+# Project Management & Team Workflow
+i)  We used Trello for project management:
+
+- Tasks were organized into boards.
+- Each task was assigned to a group member with a due date.
+- Progress was tracked through lists (To Do, In Progress, Done).
+
+ii) Slack was used for team communication:
+- Daily updates and task coordination.
+- GitHub notifications were integrated with Slack so any commit or pull request would notify the team in real-time.
