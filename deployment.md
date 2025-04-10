@@ -83,7 +83,7 @@ Select the XML file from your computer and click on "Upload file and import".
 
 Under "Import Attachments", check "Download and import file attachments" and click Submit.
 
-## Set up GitHub Actions to Automate deployment
+# Set up GitHub Actions to Automate deployment
 ### 1. Create the GitHub Actions Workflow Directory
 
 Before you set up the workflow, you need to organise the project structure to place the workflow file.
@@ -118,24 +118,42 @@ This is where the magic happens! You will define the workflow’s steps to autom
 
 show our deploy file
 
-### 4. Configure GitHub Secrets for Secure Access
+## 4. Configure GitHub Secrets for Secure Access
+### 4.1. Generate the SSH Key Pair
+First, you must generate an SSH key pair (private and public keys).
+Open your terminal (on macOS, Linux, or Windows with Git Bash or WSL).
+Run the following command to generate the SSH key pair:
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+Press Enter when prompted to specify a file to save the key (you can just use the default path).
+You’ll be asked for a passphrase (optional but recommended for added security).
+This will generate two files:
+Private Key (usually saved as ~/.ssh/id_rsa).
+Public Key (saved as ~/.ssh/id_rsa.pub).
 
+### 4.2. Copy the Private Key
+Next, you need to store the private key for use in GitHub Actions securely.
+Open the private key file (id_rsa) in a text editor.
+Copy everything in the file, including the 
+>-----BEGIN OPENSSH PRIVATE KEY----- and -----END OPENSSH PRIVATE KEY----- lines
+### 4.3. Add the Public Key to Your Server
+For your server to authenticate via SSH, you need to add the public key to your server’s 
+>~/.ssh/authorized_keys> file
+- Copy the contents of the id_rsa.pub file (this is the public key).
+- Log into your server via SSH:
+`ssh bitnami@<server-ip>`
+- Open the authorized_keys file on your server:
+`nano ~/.ssh/authorized_keys`
+Paste the public key into the file and save it.
+Now your server will accept SSH connections from the corresponding private key.
+### 4.4 Configure GitHub Secrets for Secure Access
 You need to store sensitive data (like the SSH private key) securely in GitHub Secrets so that it’s not exposed in the workflow file.
-
-Steps to add SSH key as a GitHub Secret:
-
+- * Steps to add SSH key as a GitHub Secret:
 - Go to your GitHub repository.
-
 - Click on Settings (near the top of the page).
-
-- On the left sidebar, click on Secrets and variables > Actions.
-
-- Click on New repository secret.
-
-- Add a secret with the name `SSH_PRIVATE_KEY` and paste the SSH private key in the value field.
-
-- Add another secret named `REMOTE_SERVER` and put the IP or domain of your remote server.
-
+- On the left sidebar, click on Secrets and Variables> Actions.
+- Click on New Repository secret.
+- Add a secret with the name SSH_PRIVATE_KEY and paste the SSH private key in the value field.
+- Add another secret named REMOTE_SERVER and put the IP or domain of your remote server or include that in your deploy file
 This is important because GitHub Actions will securely access these secrets when running the workflow.
 
 ### 5. Push the Changes to GitHub

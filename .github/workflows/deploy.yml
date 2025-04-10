@@ -18,14 +18,14 @@ jobs:
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
 
       - name: Sync Files to Remote Server
         uses: SamKirkland/web-deploy@v1
         with:
           target-server: 13.210.12.189  # Remote server IP or domain
           remote-user: bitnami         # SSH username on the server
-          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
           destination-path: /home/bitnami/stack/wordpress/wp-content/themes/starter-theme-sass #/home/bitnami/htdocs  #
           ssh-port: 22
           source-path: ./starter-theme-sass/
