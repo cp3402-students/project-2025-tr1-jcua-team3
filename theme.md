@@ -1,8 +1,7 @@
 # Theme Information  
-
 This page helps new developers continue working on this theme. 
 
-# Starter Theme Sass - Theme Documentation
+# Starter Theme Sass 
 ## Overview
 Starter Theme Sass is a WordPress theme based on the Underscores starter theme and enhanced with Sass for improved styling management. The theme has been customized to fit the specific needs of the Baizonn Learning Center website, which caters to parents seeking math and science education for their children. The theme is designed with a streamlined layout, minimal hardcoded content, and is highly flexible for future updates and scalability.
 
@@ -24,20 +23,6 @@ The theme has been tested with the Theme Unit Test data to ensure that it works 
 
 - **No Hardcoded Content**
 The theme ensures that no content such as the site title, footer information, or other elements are hardcoded. This makes the theme flexible, allowing for easy updates through the WordPress admin panel rather than requiring code changes.
-
-
-## Files We Edit
-The following files were edited to customize the theme for our specific site needs:
-- **`header.php`**: Modified to support custom header images and site title/logo.
-- **`footer.php`**: Custom footer layout, including widget areas.
-- **`page.php`**: Adjusted the structure of the default page layout to match the site's needs.
-- **`template-content.php`**: Customized to control the content display on different pages.
-- **`style.css`**: Edited for site-wide styling, including colors, typography, and layout.
-- **`functions.php`**: Added and modified theme setup, custom functionality, and widget areas.
-- **`sidebar.php`**: Made changes to the sidebar layout and widget placement.
-- **`single.php`**: Adjusted layout for individual blog posts.
-  
-Additional modifications may be required depending on further customizations for the theme.
 
 # Customization Details
 - **header.php**: Contains the markup for the website's header. We've customized this file to remove the default site title and incorporate a more relevant navigation menu that fits our client's branding.

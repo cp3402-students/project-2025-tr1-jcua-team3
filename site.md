@@ -1,7 +1,5 @@
 # Site Information
 
-Think about someone else, perhaps the client, who already knows WordPress taking over the running of the site itself: how do they add new content – as a page or a post? In what category? You may have used a plugin for a calendar of events or something, which needs to be described. Do not recreate WordPress documentation but clearly explain to the client’s site maintainer how this site is organised and can be updated.
-
 ## Staging and Live Sites Explained
 
 There are 2 sites for the client's maintainer, staging and live. Having these 2 sites are good because to can make changes to the contents or work on updates for the staging site without worrying about breaking the live site.
@@ -23,9 +21,7 @@ Once you have clicked the url, you will be prompted to input the username and pa
 After you have successfully logged into WordPress you will be in the dashboard. 
 
 If you want to add a page just follow these steps:
-
 - In the menu on the left click pages
-
 - Then click the 'Add New Page' button.
   
 ### Making Changes to Page Content
@@ -38,10 +34,23 @@ If you want to add or change some Media items, navigate to the dashboard of the 
 - To change current Media, Hover over the Media item you wish to make changes and you will see options to 'Edit', 'Delete Permanently', 'View', 'Copy URL', or 'Download file'.
 
 ### Adding Styles to CSS
-To make changes to the styles of the pages on your site, in the menu click 'Appearence' then click 'Customise'. From here click 'Additional CSS'. This is where the styles for your pages will belong.
+To make changes to the site’s styles:
+- In the left-hand menu, click Appearance, then select Customize.
+- From there, go to Additional CSS.
+- You can add custom CSS here to change the appearance of your pages (e.g., colors, fonts, spacing).
 
+## Changing the Site Logo and footer
+To change the logo or header image:
+- Go to Appearance > Customize in the WordPress admin menu.
+- Select <strong>Site Identity</strong> and upload your new logo or change the header image.
+
+To change the footer deatils:
+- Go to Appearance > Customize in the WordPress admin menu.
+- Select <strong>Footer Settings</strong> and update the details like comapny name, address and contact information.
+
+## Using Plugins
 ### Pushing Changes from Staging Site to Live Site
-To push the changes made from the staging site to the live site, we used a plugin called ALL-in-One WP Migration. This plugin is available on both wordpress sites, and will allow for exporting one site to another making it a copy of the first site. 
+To push the changes made from the staging site to the live site, we used a plugin called <strong>ALL-in-One WP Migration.</strong> This plugin is available on both wordpress sites, and will allow for exporting one site to another making it a copy of the first site. 
 
 In this instance once you have made changes in the staging site and want to copy it over to the live site, follow the steps below.
 
@@ -60,3 +69,27 @@ ON LIVE SITE
 - Now Click 'IMPORT SITE FROM'
 - Click 'FILE'
 - Then navigate to where you downloaded the export file of the staging site
+
+### WPForms Plugin for Registration Form
+To manage the WPForms plugin for the registration form:
+
+* Installation:
+
+- Once WPForms is installed on WordPress, it will appear in the WordPress dashboard under the WPForms menu.
+
+* Creating or Editing a Form:
+
+- To create a new form, click on WPForms in the dashboard and click Add New. You can either start from scratch or choose from an existing template.
+
+- In the template, you can add new fields and modify them using the Field Options.
+
+- If you need to change the form layout—for example, to display fields like Full Name and Contact Number side by side—this layout adjustment can be achieved through CSS for better alignment and design. WPForms provides built-in tools to adjust the form’s structure, but custom CSS can be added via the WordPress Customizer to fine-tune the form's appearance.
+
+* Embedding the Form:
+
+- Once you've customized the form, you can embed it into any page using the Embed button located in the top right of the form editor.
+
+- Select the desired page or post where you want the form to appear, and WPForms will generate a shortcode for you to insert into the page.
+
+By following the instructions above, you should be able to easily manage pages, modify content, and handle the registration form on your site. If you have any questions about WPForms or migrating content from staging to live, don’t hesitate to reach out for further assistance.
+
